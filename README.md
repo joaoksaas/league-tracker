@@ -24,7 +24,7 @@ O objetivo deste projeto é criar um pipeline de dados completo (ETL) que transf
 * `extract.py`: Script que vai consumir os IDs das partidas recentes e baixar os arquivos JSON detalhados (com controle de *Rate Limit* e cache local).
 * `analysis.py`: Esse módulo varre os JSONs locais, filtra os dados específicos do jogador alvo e calcula métricas derivadas (como KDA exato e Gold por Minuto).
 
-O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de permitir análises mais rápidas com Pandas e Jupyter
+O `analysis.py` ainda faz a conexão com um banco de dados SQLite permitindo enviar os dados para ferramentas BI (Business Inteligence) como o Power BI, por exemplo, além de permitir análises mais rápidas com Pandas e Jupyter.
 
 ## ⚙️ Como Executar
 
@@ -44,7 +44,7 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de perm
 3. Crie um arquivo ```.env``` na raiz do projeto, semelhante ao ```.env.example```:
    ```bash
    RIOT_API_KEY = "sua_api_key"
-   NICK = "nick_da_conta"
-   RIOT_ID = "riot_id_da_conta"
+   NOME = "nome_da_conta"
+   TAG = "tag_da_conta"
 
    
