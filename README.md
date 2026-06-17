@@ -35,7 +35,7 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de perm
 ### Configuração
 1. 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/joaoksaas/lol-tracker.git](https://github.com/joaoksaas/lol-tracker.git)
+   git clone https://github.com/joaoksaas/league-tracker.git
 
 2. Instale as dependências necessárias:
    ```bash
@@ -43,8 +43,8 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de perm
 
 3. Crie um arquivo ```.env``` na raiz do projeto, semelhante ao ```.env.example```:
   ```bash
-  RIOT_API_KEY = "sua_api_key"
-  NICK = "nick_da_conta"
-  RIOT_ID = "riot_id_da_conta"
+     RIOT_API_KEY = "sua_api_key"
+     NICK = "nick_da_conta"
+     RIOT_ID = "riot_id_da_conta"
 
    
