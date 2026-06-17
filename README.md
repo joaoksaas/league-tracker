@@ -33,7 +33,7 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de perm
 * Uma chave de API da Riot Games ativa (Riot Developer Portal)
 
 ### Configuração
-1. 1. Clone o repositório:
+1. Clone o repositório:
    ```bash
    git clone https://github.com/joaoksaas/league-tracker.git
 
@@ -42,7 +42,7 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de perm
    pip install requests python-dotenv pandas sqlalchemy matplotlib seaborn notebook
 
 3. Crie um arquivo ```.env``` na raiz do projeto, semelhante ao ```.env.example```:
-  ```bash
+   ```bash
      RIOT_API_KEY = "sua_api_key"
      NICK = "nick_da_conta"
      RIOT_ID = "riot_id_da_conta"
