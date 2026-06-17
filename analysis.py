@@ -21,9 +21,9 @@ def analyze_local_data(my_puuid, nick):
             with open(f"{path}/{file}", 'r') as f:
                 data = json.load(f)
                 
-                # Procura você entre os participantes
+                # Procura o player entre os participantes
                 participants = data['info']['participants']
-                me = next((p for p in participants if p['puuid'] == my_puuid), None) # o PUUID é neessário aqui, para identificar o player nas partidas
+                me = next((p for p in participants if p['puuid'] == my_puuid), None) # o PUUID é necessário aqui, para identificar o player nas partidas
                 
                 if me:
                     all_stats.append({
@@ -54,11 +54,11 @@ def analyze_local_data(my_puuid, nick):
 
 load_dotenv()
 
-nick = os.getenv('NICK') 
-riot_id = os.getenv('RIOT_ID')
+nome = os.getenv('NOME') 
+tag = os.getenv('TAG')
 API_KEY = os.getenv('RIOT_API_KEY')
 
-puuid = get_puuid(nick, riot_id, API_KEY)
+puuid = get_puuid(nome, tag, API_KEY)
 
 player = "saas" # nome para identificação do jogador nas tabelas e arquivos
 
@@ -93,7 +93,7 @@ demais_modos = df[df["game_mode"] != "CLASSIC"]
 win_rate_ranked = ranked["win"].mean()
 win_rate_ranked*100
 # %%
-stats_on_win_ranked = ranked.groupby("win")[["gold_per_min", "kda", "damage_dealt", "vision_score"]].mean().T
+stats_on_win_ranked = ranked.groupby("win")[["gold_per_min", "kda", "damage_dealt", "vision_score"]].mean().T # .t é de Transpose, gira a tebela
 stats_on_win_ranked
 
 #fb_on_win_ranked = ranked.groupby("win")["first_blood"].agg(lambda x: x.mode()[0])

@@ -11,7 +11,6 @@ HEADERS = {"X-Riot-Token": API_KEY}
 BASE_PATH = "match_history" # Pasta raiz dos dados
 
 
-
 # --- EXTRAÇÃO ---
 def fetch_and_save_matches(nick, puuid, count):
     # 1. Busca a lista de IDs primeiro (evita criar pasta se a API falhar)
@@ -56,10 +55,12 @@ def fetch_and_save_matches(nick, puuid, count):
 
 
 # --- EXECUÇÃO ---
-nick = os.getenv('NICK')
-riot_id = os.getenv('RIOT_ID')
+# Riot ID: Nome #Tag
 
-puuid_alvo = get_puuid(nick, riot_id, API_KEY) # Nick, RiotID (sem o #), API_KEY
+nome = os.getenv('NOME')
+tag = os.getenv('TAG')
+
+puuid_alvo = get_puuid(nome, tag, API_KEY) # Nick, Tag (sem o #), API_KEY
 
 # O bloco condicional agora protege a execução corretamente
 if puuid_alvo:
