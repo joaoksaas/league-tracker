@@ -33,7 +33,7 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite, além de perm
 * Uma chave de API da Riot Games ativa (Riot Developer Portal)
 
 ### Configuração
-1. Clone o repositório:
+1. 1. Clone o repositório:
    ```bash
    git clone [https://github.com/joaoksaas/lol-tracker.git](https://github.com/joaoksaas/lol-tracker.git)
 
