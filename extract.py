@@ -66,6 +66,6 @@ puuid_alvo = get_puuid(nome, tag, API_KEY) # Nick, Tag (sem o #), API_KEY
 if puuid_alvo:
     print("PUUID capturado!") 
     print(f"Iniciando extração para {puuid_alvo}...")
-    fetch_and_save_matches("player1", puuid_alvo, 20) # nome da pasta, puuid desejado, número de partidas para download
+    fetch_and_save_matches("saas", puuid_alvo, 40) # nome da pasta, puuid desejado, número de partidas para download
 else:
     print("Debug: Erro! O PUUID não foi encontrado. Verifique o Nick e a Tag.")
