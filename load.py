@@ -85,7 +85,7 @@ load_dotenv()
 nome = os.getenv('NOME') 
 tag = os.getenv('TAG')
 API_KEY = os.getenv('RIOT_API_KEY')
-player = "saas" # nome para identificação do jogador nas tabelas e arquivos
+player = "saas" # nome para identificação do jogador nas tabelas e arquivos, em caso de mais de 1 conta por jogador
 
 puuid = get_puuid(nome, tag, API_KEY)
 
