@@ -20,11 +20,10 @@ O objetivo deste projeto é criar um pipeline de dados completo (ETL) que transf
 
 ## 📁 Estrutura do Repositório
 
-* `puuid.py`: Script responsável por buscar o PUUID do jogador.
-* `extract.py`: Script que vai consumir os IDs das partidas recentes e baixar os arquivos JSON detalhados (com controle de *Rate Limit* e cache local).
-* `analysis.py`: Esse módulo varre os JSONs locais, filtra os dados específicos do jogador alvo e calcula métricas derivadas (como KDA exato e Gold por Minuto).
-
-O `analysis.py` ainda faz a conexão com um banco de dados SQLite permitindo enviar os dados para ferramentas BI (Business Inteligence) como o Power BI, por exemplo, além de permitir análises mais rápidas com Pandas e Jupyter.
+* `puuid.py`: Script responsável por buscar o PUUID do jogador através da API da Riot utilizando o Riot ID e Tag.
+* `extract.py`: Script que consome os IDs das partidas recentes e baixa os arquivos JSON detalhados (com controle de *Rate Limit* e cache local).
+* `load.py`: Script de ETL que varre os JSONs locais, filtra os dados específicos do jogador alvo, calcula métricas derivadas (como KDA exato e Gold por Minuto) e centraliza tudo em tabelas relacionais no banco de dados SQLite de forma incremental e sem duplicatas.
+* `analysis.py`: Módulo focado em análises exploratórias e estatísticas rápidas utilizando Pandas, Jupyter Notebook, Matplotlib e Seaborn diretamente sobre o banco de dados.
 
 ## ⚙️ Como Executar
 
@@ -43,8 +42,8 @@ O `analysis.py` ainda faz a conexão com um banco de dados SQLite permitindo env
 
 3. Crie um arquivo ```.env``` na raiz do projeto, semelhante ao ```.env.example```:
    ```bash
-   RIOT_API_KEY = "sua_api_key"
-   NOME = "nome_da_conta"
-   TAG = "tag_da_conta"
+   RIOT_API_KEY="sua_api_key"
+   NOME="nome_da_sua_conta"
+   TAG="sua_tag_sem_o_hashtag"
 
    
